@@ -3,8 +3,8 @@ import XLSX from "xlsx";
 import fs from "fs";
 import path from "path";
 
-const pdfFilePath = "D:/WorkSpace/Pet-Hut/pet-hut-scripts/EIN06807-C.pdf";
-const excelFilePath = "D:/WorkSpace/Pet-Hut/pet-hut-scripts/emails.xlsx";
+const pdfFilePath = "Add your pdf file path here";
+const excelFilePath = "Add your excel file path here";
 
 function readEmailsFromExcel(filePath: string): string[] {
   try {
@@ -25,8 +25,8 @@ function readEmailsFromExcel(filePath: string): string[] {
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
-    user: "shashankgowda7275@gmail.com",
-    pass: "kmwk hleg ofap voxh",
+    user: "Your email id here",
+    pass: "App password in Gmail here 16 character",
   },
 });
 
@@ -38,7 +38,7 @@ async function sendEmail(email: string) {
 
     const pdfContent = fs.readFileSync(pdfFilePath);
     const mailOptions = {
-      from: "shashankgowda7275@gmail.com",
+      from: "Add your email here",
       to: email,
       subject: "Your PDF Attachment",
       text: "Please find the attached PDF file.",
