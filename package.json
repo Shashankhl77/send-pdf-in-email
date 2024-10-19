@@ -1,0 +1,68 @@
+{
+  "name": "pdfkit-learn",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc -p .",
+    "start": "npm run build:live",
+    "build:live": "nodemon --watch \"src/\" --ext \"ts\" --exec \"ts-node\" src/index.ts ./EIN06808.xlsx --f",
+    "pkg": "pkg ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.12.12",
+    "@types/nodemailer": "^6.4.16",
+    "@types/number-to-words": "^1.2.3",
+    "@types/pdfkit": "^0.13.4",
+    "@types/printer": "^0.4.5",
+    "@types/qrcode": "^1.5.5",
+    "@types/readline-sync": "^1.4.8",
+    "cross-env": "^7.0.3",
+    "nodemon": "^3.1.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3"
+  },
+  "bin": "lib/index.js",
+  "pkg": {
+    "scripts": [
+      "scripts/**/*.js",
+      "build/**/*.js"
+    ],
+    "assets": [
+      "public/**/*",
+      "node_modules/**/*.js",
+      "node_modules/**/*.css",
+      "node_modules/**/*.afm",
+      "node_modules/**/*.node"
+    ],
+    "targets": [
+      "node14-win-x86"
+    ],
+    "outputPath": "dist"
+  },
+  "dependencies": {
+    "@adiwajshing/baileys": "^5.0.0",
+    "aws-sdk": "^2.1691.0",
+    "axios": "^1.7.7",
+    "dotenv": "^16.4.5",
+    "form-data": "^4.0.1",
+    "googleapis": "^144.0.0",
+    "nodemailer": "^6.9.15",
+    "number-to-words": "^1.2.4",
+    "pdf-lib": "^1.17.1",
+    "pdf-to-printer": "^5.6.0",
+    "pdfkit": "^0.15.0",
+    "qrcode": "^1.5.3",
+    "readline-sync": "^1.4.10",
+    "xlsx": "^0.18.5"
+  },
+  "compilerOptions": {
+    "typeRoots": [
+      "./node_modules/@types",
+      "./src"
+    ]
+  }
+}
